@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: belintende
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/${dbName}?createDatabaseIfNotExist=true&autoReconnect=true&useSLL=false
+    username: ${username}
+    password: ${password}
+
+  #configurazione JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    open-in-view: false
+
+logging:
+  level:
+    it.cgmconsulting.belintende: info
+    org.hibernate.orm.jdbc.bind: trace
+    org.springframework: info
+
+
+
+
